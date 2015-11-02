@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   redirect_to root_url, alert: exception.message
  end
 
- #### must add if using cancan otherwise no data will get inserted/updated
+ #### Cancan gem workaround
  before_filter do
   resource = controller_name.singularize.to_sym
   method = "#{resource}_params"
